@@ -4,11 +4,17 @@ class Solution:
             return False
         dict_s={}
         dict_t={}
+        count=0
         for i in s:
-            dict_s[i] = dict_s.get(i, 0) + 1
-        for i in t:
-            dict_t[i] = dict_t.get(i, 0) + 1
+            if i in dict_s:
+                dict_s[i] += 1
+            else:
+                dict_s[i] = 1
+        for j in t:
+            if j in dict_t:
+                dict_t[j] += 1
+            else:
+                dict_t[j] = 1
         return dict_s==dict_t
-
 
         
